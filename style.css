@@ -754,3 +754,8 @@ em { font-style: italic; }
 /* per-card focus point for photo backgrounds (--pos desktop, --pos-m phones) */
 .beyond-card.has-bg { background-position: center var(--pos, 30%); }
 @media (max-width: 760px) { .beyond-card.has-bg { background-position: center var(--pos-m, var(--pos, 30%)); } }
+
+/* Who I am: three stat cards, the last one spans the full width */
+.stats .stat:nth-child(3) { grid-column: 1 / -1; }
+.stats .stat:nth-child(2), .stats .stat.reveal.in:nth-child(2) { transform: none; }
+.stats .stat:nth-child(3) b { font-size: 3.4rem; }
