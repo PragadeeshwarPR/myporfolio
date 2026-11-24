@@ -751,3 +751,6 @@ em { font-style: italic; }
 .beyond-card.has-bg:hover::before { opacity: .85; }
 .beyond-card.has-bg { background-size: cover; transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s, background-size .6s; }
 .beyond-card.has-bg { display: flex; flex-direction: column; justify-content: flex-end; min-height: 300px; }
+/* per-card focus point for photo backgrounds (--pos desktop, --pos-m phones) */
+.beyond-card.has-bg { background-position: center var(--pos, 30%); }
+@media (max-width: 760px) { .beyond-card.has-bg { background-position: center var(--pos-m, var(--pos, 30%)); } }
