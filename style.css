@@ -196,7 +196,7 @@ em { font-style: italic; }
   animation: bob 5s ease-in-out infinite;
 }
 .s-1 { top: 4%; left: 0; background: var(--yellow); --r: -7deg; }
-.s-2 { top: 30%; right: -4%; background: #fff; border: 1.5px solid var(--ink); --r: 6deg; animation-delay: -1.5s; }
+.s-2 { top: -4%; right: -2%; background: #fff; border: 1.5px solid var(--ink); --r: 6deg; animation-delay: -1.5s; }
 .s-3 { bottom: 10%; left: -2%; background: var(--coral); color: #fff; --r: -4deg; animation-delay: -3s; }
 @keyframes bob { 0%, 100% { transform: rotate(var(--r)) translateY(0); } 50% { transform: rotate(var(--r)) translateY(-10px); } }
 
@@ -379,7 +379,8 @@ em { font-style: italic; }
   .section { padding: 90px 0; }
   .project-grid, .edu-grid, .skill-grid { grid-template-columns: 1fr; }
   .sticker { font-size: 1.1rem; }
-  .s-2 { right: 0; }
+  .s-2 { top: -6%; right: 0; }
+  .s-1 { top: 2%; left: -2%; }
   .spin-badge { width: 90px; height: 90px; right: 0; }
   .timeline li { gap: 1rem; }
   .timeline::before { left: 21px; }
