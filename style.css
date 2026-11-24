@@ -798,3 +798,6 @@ em { font-style: italic; }
 }
 .stats .stat-me .me-tags li:hover { transform: none; }
 @media (max-width: 760px) { .stats .stat-me .me-tags li, .stats .stat-me .me-tags li:nth-child(n) { font-size: .95rem; } }
+
+/* Menu links: capitalise the first letter of each word */
+.nav-links a, .blog-nav-links a { text-transform: capitalize; }
