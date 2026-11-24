@@ -628,3 +628,67 @@ em { font-style: italic; }
   transition: background .25s, color .25s;
 }
 .copy-mail:hover, .copy-mail.copied { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
+
+/* =========================================================
+   Featured project: FitPulse
+   ========================================================= */
+.project.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.05fr 1fr; gap: 1.5rem; align-items: center; }
+.project.featured .project-info { padding: 1rem 1.4rem 1rem .4rem; }
+.project.featured:hover { box-shadow: 0 30px 60px -25px rgba(57,255,120,.35), 0 0 0 1px var(--line); }
+.project-kicker { font-size: .72rem !important; font-weight: 800; letter-spacing: .18em; color: var(--coral) !important; margin: 0 0 .3rem !important; }
+.project.featured h3 { font-size: 2.2rem; }
+.fp-features { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; grid-template-columns: 1fr 1fr; gap: .45rem 1rem; font-size: .9rem; color: var(--ink-2); }
+
+.fp-browser .browser-bar { background: #111814; color: #8FA699; }
+.fp-screen {
+  position: relative; aspect-ratio: 16/11; overflow: hidden; padding: 1.4rem;
+  background: radial-gradient(circle at 70% 20%, #16251C, #080B0A 70%);
+  color: #E9FFF1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr auto; gap: 1rem;
+}
+.fp-brand { grid-column: 1 / -1; display: flex; align-items: center; gap: .6rem; font-size: 1.15rem; letter-spacing: -.01em; }
+.fp-brand svg { width: 34px; height: 34px; filter: drop-shadow(0 0 8px rgba(57,255,120,.5)); }
+.fp-ring { position: relative; display: grid; place-items: center; }
+.fp-ring svg { width: min(170px, 100%); transform: rotate(-90deg); }
+.fp-ring circle { fill: none; stroke: #1B2A21; stroke-width: 10; }
+.fp-ring .fp-ring-fill { stroke: #39FF78; stroke-linecap: round; stroke-dasharray: 314; stroke-dashoffset: 314; filter: drop-shadow(0 0 6px rgba(57,255,120,.7)); transition: stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1) .3s; }
+.project.featured.in .fp-ring-fill { stroke-dashoffset: 105; }
+.fp-ring span { position: absolute; text-align: center; font-size: .72rem; color: #8FA699; line-height: 1.2; }
+.fp-ring span b { display: block; font-size: 1.5rem; color: #fff; }
+.fp-tiles { display: flex; flex-direction: column; justify-content: center; gap: .55rem; }
+.fp-tiles span {
+  display: flex; align-items: center; gap: .6rem; padding: .55rem .8rem; border-radius: 12px; font-weight: 700; font-size: .9rem;
+  background: #111A14; border: 1px solid #1F3127;
+}
+.fp-tiles i { font-style: normal; }
+.fp-scan {
+  grid-column: 1 / -1; justify-self: start; padding: .55rem 1rem; border-radius: 999px; font-weight: 800; font-size: .85rem;
+  background: #39FF78; color: #06130B; box-shadow: 0 0 22px rgba(57,255,120,.45);
+}
+.fp-pulse { position: absolute; left: 0; right: 0; bottom: 10px; width: 100%; height: 48px; opacity: .35; }
+.fp-pulse path { fill: none; stroke: #39FF78; stroke-width: 3; stroke-dasharray: 900; stroke-dashoffset: 900; animation: pulseDraw 3.5s linear infinite; }
+@keyframes pulseDraw { to { stroke-dashoffset: 0; } }
+
+.project.coming {
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: .4rem;
+  padding: 2rem; border: 2px dashed rgba(233,164,0,.45); background: linear-gradient(135deg, #fff, var(--cream));
+  grid-column: 1 / -1;
+}
+.project.coming h3 { font-family: var(--font-display); font-size: 1.5rem; margin: 0; }
+.project.coming p { color: var(--ink-2); margin: 0 0 .8rem; }
+.coming-emoji { font-size: 2rem; }
+
+@media (max-width: 980px) {
+  .project.featured { grid-template-columns: 1fr; }
+  .project.featured .project-info { padding: .6rem .8rem .8rem; }
+}
+@media (max-width: 760px) {
+  .fp-features { grid-template-columns: 1fr; }
+  .fp-screen { padding: 1rem; gap: .7rem; }
+  .fp-tiles span { font-size: .78rem; padding: .4rem .6rem; }
+  .project.featured h3 { font-size: 1.8rem; }
+}
+.fp-screen > :not(.fp-pulse) { position: relative; z-index: 1; }
+@media (max-width: 760px) {
+  .fp-screen { aspect-ratio: auto; padding-bottom: 3.4rem; }
+  .fp-ring svg { width: 130px; }
+}
