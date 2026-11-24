@@ -1,6 +1,7 @@
 ---
 title: "Why I'm starting this blog"
 summary: "I'm not an expert. That's exactly why I'm writing things down."
+image: /assets/blog-intro-cover.jpg
 tags: [life, learning]
 ---
 
