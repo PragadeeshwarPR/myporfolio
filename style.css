@@ -693,3 +693,14 @@ em { font-style: italic; }
   .fp-screen { aspect-ratio: auto; padding-bottom: 3.4rem; }
   .fp-ring svg { width: 130px; }
 }
+
+/* Phones: stickers live in a reserved band above the photo, so they can never cover the face */
+@media (max-width: 760px) {
+  .hero-visual { place-items: start center; align-content: start; padding-top: 54px; min-height: 0; }
+  .s-2 { top: 4px; right: 0; }
+  .s-1 { top: 10px; left: 0; }
+}
+@media (max-width: 400px) {
+  .sticker { font-size: .95rem; padding: .2em .65em; }
+  .s-2 { top: 2px; }
+}
