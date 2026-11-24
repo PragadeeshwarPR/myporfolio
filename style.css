@@ -131,12 +131,29 @@ a { color: inherit; text-decoration: none; }
   33% { transform: translate(30px, -40px) scale(1.06); }
   66% { transform: translate(-25px, 20px) scale(.96); }
 }
-.sun-rays {
-  position: absolute; width: 1400px; height: 1400px; top: -700px; right: -500px;
-  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.35) 0deg 6deg, transparent 6deg 18deg);
-  border-radius: 50%; animation: spin 90s linear infinite;
-  mask: radial-gradient(circle, #000 20%, transparent 65%);
-  -webkit-mask: radial-gradient(circle, #000 20%, transparent 65%);
+.dot-grid {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(30,26,18,.16) 1.4px, transparent 1.6px);
+  background-size: 26px 26px;
+  -webkit-mask: radial-gradient(ellipse 75% 70% at 70% 45%, #000 0%, transparent 72%);
+          mask: radial-gradient(ellipse 75% 70% at 70% 45%, #000 0%, transparent 72%);
+}
+.ring {
+  position: absolute; border-radius: 50%; border: 2px solid rgba(255,255,255,.75);
+  right: 12%; top: 46%; width: 260px; height: 260px; margin: -130px -130px 0 0;
+  animation: ripple 9s ease-out infinite; opacity: 0;
+}
+.ring.r2 { animation-delay: -3s; } .ring.r3 { animation-delay: -6s; }
+@keyframes ripple { 0% { transform: scale(.5); opacity: 0; } 15% { opacity: .9; } 100% { transform: scale(2.6); opacity: 0; } }
+.spark { position: absolute; color: var(--gold); font-size: 1.6rem; line-height: 1; animation: twinkle 4s ease-in-out infinite; text-shadow: 0 0 14px rgba(255,200,61,.9); }
+.k1 { top: 18%; left: 8%; } .k2 { top: 30%; left: 46%; font-size: 1.1rem; animation-delay: -1s; color: var(--coral); }
+.k3 { top: 72%; left: 40%; font-size: 1.3rem; animation-delay: -2s; color: #B36BFF; }
+.k4 { top: 14%; right: 8%; font-size: 2rem; animation-delay: -.5s; } .k5 { top: 80%; right: 6%; animation-delay: -3s; color: var(--coral); }
+.k6 { top: 58%; left: 3%; font-size: 1rem; animation-delay: -2.5s; }
+@keyframes twinkle { 0%, 100% { transform: scale(.7) rotate(0deg); opacity: .35; } 50% { transform: scale(1.25) rotate(25deg); opacity: 1; } }
+@media (max-width: 760px) {
+  .ring { width: 180px; height: 180px; margin: -90px -90px 0 0; right: 50%; top: 62%; }
+  .k2, .k3 { display: none; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 .hero::after { /* grain */
@@ -704,3 +721,4 @@ em { font-style: italic; }
   .sticker { font-size: .95rem; padding: .2em .65em; }
   .s-2 { top: 2px; }
 }
+@media (max-width: 760px) { .dot-grid { opacity: .45; } }
