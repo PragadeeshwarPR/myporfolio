@@ -755,14 +755,11 @@ em { font-style: italic; }
 .beyond-card.has-bg { background-position: center var(--pos, 30%); }
 @media (max-width: 760px) { .beyond-card.has-bg { background-position: center var(--pos-m, var(--pos, 30%)); } }
 
-/* Who I am: three stat cards, the last one spans the full width */
-.stats .stat:nth-child(3) { grid-column: 1 / -1; }
-.stats .stat:nth-child(2), .stats .stat.reveal.in:nth-child(2) { transform: none; }
-.stats .stat:nth-child(3) b { font-size: 3.4rem; }
+/* Who I am: four equal stat cards in two rows, no staggered offset */
+.stats .stat:nth-child(2), .stats .stat:nth-child(4),
+.stats .stat.reveal.in:nth-child(2), .stats .stat.reveal.in:nth-child(4) { transform: none; }
 
 /* Who I am: "in short, I'm a ..." identity card */
-.stats .stat.stat-me { grid-column: 1 / -1; }
-.stats .stat.stat-me, .stats .stat.reveal.in.stat-me { transform: none; }
 .stat-me-label { position: relative; margin: 0 0 .8rem; font-family: var(--font-hand); font-size: 1.5rem; line-height: 1; color: var(--coral); }
 .me-tags { position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
 .me-tags li {
@@ -775,3 +772,21 @@ em { font-style: italic; }
 .me-tags li:nth-child(3) { background: #E4DDFF; border-color: rgba(150,130,255,.5); }
 .me-tags li:hover { transform: translateY(-3px) rotate(-2deg); }
 .me-tags i { font-style: normal; }
+
+/* compact "in short" card: tags stack, sized to sit next to the other stat cards */
+.stat-me-label { font-size: 1.3rem; margin-bottom: .6rem; }
+.me-tags { flex-direction: column; align-items: flex-start; gap: .4rem; }
+.me-tags li { padding: .32em .8em; font-size: .82rem; max-width: 100%; }
+@media (max-width: 760px) {
+  .me-tags li { font-size: .74rem; padding: .3em .65em; gap: .3em; }
+  .stat-me-label { font-size: 1.15rem; }
+}
+@media (max-width: 760px) {
+  .stats .stat.stat-me { padding: 1.2rem 1rem; }
+  .me-tags li { white-space: nowrap; font-size: .7rem; padding: .28em .55em; gap: .25em; }
+}
+/* narrow laptop widths: the stats column is slim, so use the compact tag size */
+@media (min-width: 981px) and (max-width: 1120px) {
+  .stats .stat.stat-me { padding: 1.2rem 1rem; }
+  .me-tags li { white-space: nowrap; font-size: .72rem; padding: .28em .6em; gap: .28em; }
+}
