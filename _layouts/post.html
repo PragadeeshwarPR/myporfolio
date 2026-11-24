@@ -1,0 +1,48 @@
+---
+layout: blog
+---
+{% assign words = content | number_of_words %}
+{% assign mins = words | divided_by: 200 | plus: 1 %}
+<article class="post container">
+  <a class="back-link" href="{{ '/blog/' | relative_url }}">← all posts</a>
+
+  <header class="post-head">
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span>·</span> {{ mins }} min read
+    </p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.summary %}<p class="post-summary">{{ page.summary }}</p>{% endif %}
+    {% if page.tags.size > 0 %}
+    <ul class="tags post-tags">{% for t in page.tags %}<li>#{{ t }}</li>{% endfor %}</ul>
+    {% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <aside class="author-card">
+    <img src="{{ '/assets/me-formal.jpg' | relative_url }}" alt="Pragadeeshwar P R" width="72" height="90" loading="lazy" />
+    <div>
+      <p class="author-name">Written by Praga</p>
+      <p>Pragadeeshwar P R, a CSE student at HITS preparing for GATE 2028. Still learning, still growing, still becoming.</p>
+      <p class="author-links">
+        <a href="{{ '/' | relative_url }}">portfolio ↗</a>
+        <a href="https://www.linkedin.com/in/pragadeeshwarpr/" target="_blank" rel="noopener">linkedin ↗</a>
+        <a href="mailto:pragadeeshwarpr13@gmail.com?subject={{ page.title | url_encode }}">reply by email ↗</a>
+      </p>
+    </div>
+  </aside>
+
+  {% if page.previous or page.next %}
+  <nav class="post-pager" aria-label="More posts">
+    {% if page.previous %}
+    <a class="pager-card" href="{{ page.previous.url | relative_url }}"><span>← older</span>{{ page.previous.title }}</a>
+    {% else %}<span></span>{% endif %}
+    {% if page.next %}
+    <a class="pager-card next" href="{{ page.next.url | relative_url }}"><span>newer →</span>{{ page.next.title }}</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</article>

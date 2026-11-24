@@ -1,0 +1,37 @@
+# Site settings (used by GitHub Pages' built-in Jekyll)
+title: Praga's Blog
+author: Pragadeeshwar P R
+description: Notes on learning, building and becoming, by Pragadeeshwar P R (Praga).
+url: https://pragadeeshwarpr.github.io
+baseurl: /myporfolio
+timezone: Asia/Kolkata
+lang: en
+
+# Blog post addresses look like /myporfolio/blog/my-post-title/
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      image: /assets/me-formal.jpg
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

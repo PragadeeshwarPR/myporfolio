@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% seo %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Caveat:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/style.css?v=6' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/blog.css?v=6' | relative_url }}" />
+  {% feed_meta %}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23FFC83D'/><text x='50' y='66' font-size='48' text-anchor='middle' font-family='Georgia' font-weight='700' fill='%231E1A12'>P</text></svg>" />
+</head>
+<body class="blog-body">
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="nav-wrap">
+    <nav class="nav blog-nav">
+      <a href="{{ '/' | relative_url }}" class="logo">praga<span>.</span></a>
+      <ul class="blog-nav-links">
+        <li><a href="{{ '/' | relative_url }}">portfolio</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' %} class="active"{% endif %}>all posts</a></li>
+      </ul>
+      <a href="{{ '/#contact' | relative_url }}" class="btn btn-dark btn-sm blog-hi">say hi 👋</a>
+    </nav>
+  </header>
+
+  <div class="blog-glow" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
+  <main class="blog-main">
+    {{ content }}
+  </main>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <p class="hand">still learning, still growing, still becoming ☀️</p>
+      <ul class="blog-socials">
+        <li><a href="https://github.com/PragadeeshwarPR" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/pragadeeshwarpr/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/praga_1309/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="mailto:pragadeeshwarpr13@gmail.com">Email</a></li>
+        <li><a href="{{ '/blog/feed.xml' | relative_url }}">RSS</a></li>
+      </ul>
+      <p class="copy">© {{ site.time | date: '%Y' }} Pragadeeshwar P R</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const bar = document.querySelector(".progress");
+      const nav = document.querySelector(".nav");
+      const onScroll = () => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+        nav.classList.toggle("scrolled", scrollY > 30);
+      };
+      addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

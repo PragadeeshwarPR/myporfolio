@@ -1,0 +1,22 @@
+---
+layout: blog
+title: Blog
+description: Notes on learning, building and becoming, by Pragadeeshwar P R (Praga).
+---
+<section class="blog-hero container">
+  <p class="eyebrow">THE BLOG</p>
+  <h1 class="title">Notes from a <em>work in progress.</em></h1>
+  <p class="lead">What I'm learning, building, watching and figuring out, written down so I remember it (and maybe it helps you too).</p>
+</section>
+
+<section class="container">
+  {% if site.posts.size > 0 %}
+  <div class="post-list">
+    {% for post in site.posts %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-note">The first post is on its way. ✍️</p>
+  {% endif %}
+</section>

@@ -1,0 +1,10 @@
+{% assign p = include.post %}
+{% assign words = p.content | number_of_words %}
+{% assign mins = words | divided_by: 200 | plus: 1 %}
+<a class="post-card" href="{{ p.url | relative_url }}">
+  <p class="post-meta"><time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time> <span>·</span> {{ mins }} min read</p>
+  <h3>{{ p.title }}</h3>
+  <p class="post-card-summary">{% if p.summary %}{{ p.summary }}{% else %}{{ p.excerpt | strip_html | truncatewords: 28 }}{% endif %}</p>
+  {% if p.tags.size > 0 %}<ul class="tags small">{% for t in p.tags limit: 3 %}<li>#{{ t }}</li>{% endfor %}</ul>{% endif %}
+  <span class="read-more">read post →</span>
+</a>
