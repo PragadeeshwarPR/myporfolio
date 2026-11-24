@@ -9,8 +9,11 @@
   const nav = document.querySelector(".nav");
   const links = [...document.querySelectorAll(".nav-links a")];
   const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
+  const bar = document.querySelector(".progress");
   const onScroll = () => {
     nav.classList.toggle("scrolled", window.scrollY > 30);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
     const y = window.scrollY + window.innerHeight * 0.35;
     let current = -1;
     sections.forEach((s, i) => { if (s && s.offsetTop <= y) current = i; });
@@ -47,13 +50,13 @@
   const counter = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
-      const el = e.target, end = +el.dataset.count, dur = 1600, t0 = performance.now();
+      const el = e.target, end = +el.dataset.count, dec = +(el.dataset.decimals || 0), dur = 1600, t0 = performance.now();
       const tick = (t) => {
         const p = Math.min(1, (t - t0) / dur);
-        el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+        el.textContent = (end * (1 - Math.pow(1 - p, 3))).toFixed(dec);
         if (p < 1) requestAnimationFrame(tick);
       };
-      reduce ? (el.textContent = end) : requestAnimationFrame(tick);
+      reduce ? (el.textContent = end.toFixed(dec)) : requestAnimationFrame(tick);
       counter.unobserve(el);
     });
   }, { threshold: 0.5 });
