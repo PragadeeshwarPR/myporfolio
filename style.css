@@ -722,3 +722,15 @@ em { font-style: italic; }
   .s-2 { top: 2px; }
 }
 @media (max-width: 760px) { .dot-grid { opacity: .45; } }
+
+/* 7-link nav: keep it on one line on narrower laptops/tablets */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1080px) and (min-width: 761px) {
+  .nav { padding-left: 18px; gap: .6rem; }
+  .nav-links { gap: 1.1rem; font-size: .86rem; }
+}
+@media (max-width: 880px) and (min-width: 761px) {
+  .nav-links { gap: .8rem; font-size: .8rem; }
+  .nav .btn-dark { padding: .55em .9em; font-size: .8rem; }
+  .logo { font-size: 1.8rem; }
+}
