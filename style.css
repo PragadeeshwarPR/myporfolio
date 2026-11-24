@@ -801,3 +801,20 @@ em { font-style: italic; }
 
 /* Menu links: capitalise the first letter of each word */
 .nav-links a, .blog-nav-links a { text-transform: capitalize; }
+
+/* Education card with a photo background (college) */
+.edu-card.has-bg {
+  background: #1E1A12 var(--bg) center var(--pos, 30%) / cover no-repeat;
+  border-color: transparent; color: #fff; isolation: isolate;
+  display: flex; flex-direction: column; justify-content: flex-end; min-height: 340px;
+}
+.edu-card.has-bg::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: linear-gradient(180deg, rgba(20,16,10,.05) 0%, rgba(20,16,10,.5) 42%, rgba(20,16,10,.9) 100%);
+}
+.edu-card.has-bg .edu-tag { align-self: flex-start; color: var(--ink); }
+.edu-card.has-bg h3 { color: #fff; margin-top: .9rem; }
+.edu-card.has-bg .edu-meta { color: #FFD86B; }
+.edu-card.has-bg p:last-child { color: rgba(255,255,255,.88); }
+@media (max-width: 760px) { .edu-card.has-bg { min-height: 320px; } }
+@media (max-width: 760px) { .edu-card.has-bg { min-height: 500px; --pos: 0%; } }
