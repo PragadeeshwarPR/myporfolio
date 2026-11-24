@@ -6,6 +6,8 @@ url: https://pragadeeshwarpr.github.io
 baseurl: /myporfolio
 timezone: Asia/Kolkata
 lang: en
+# Fallback picture for link previews (WhatsApp, LinkedIn) when a post has no cover
+image: /assets/me-formal.jpg
 
 # Blog post addresses look like /myporfolio/blog/my-post-title/
 permalink: /blog/:title/
@@ -29,7 +31,6 @@ defaults:
       type: posts
     values:
       layout: post
-      image: /assets/me-formal.jpg
 
 exclude:
   - README.md

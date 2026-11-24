@@ -7,6 +7,8 @@
 #    It goes live in about a minute.
 title: "Your post title here"
 summary: "One short line that appears on the post card."
+image: /assets/your-cover-picture.jpg   # optional cover picture
+published: true                         # set to false to keep it as a private draft
 tags: [learning]
 ---
 
@@ -21,7 +23,7 @@ Start writing here. A blank line starts a new paragraph.
 
 > A quote or a line you want to stand out.
 
-![Describe the image](/myporfolio/assets/your-image.jpg)
+![Describe the image](/assets/your-image.jpg)
 
 ```js
 // a code block

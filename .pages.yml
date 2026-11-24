@@ -3,7 +3,7 @@
 
 media:
   input: assets
-  output: /myporfolio/assets
+  output: /assets
 
 content:
   - name: posts
@@ -12,7 +12,7 @@ content:
     path: _posts
     filename: "{year}-{month}-{day}-{primary}.md"
     view:
-      fields: [title, summary]
+      fields: [title, summary, published]
       primary: title
       sort: [title]
       default:
@@ -26,10 +26,17 @@ content:
       - name: summary
         label: Short summary (shown on the post card)
         type: text
+      - name: image
+        label: Cover picture (shown on the card and at the top of the post)
+        type: image
       - name: tags
         label: Tags
         type: string
         list: true
+      - name: published
+        label: Publish this post (switch off to save it as a private draft)
+        type: boolean
+        default: true
       - name: body
-        label: Post
+        label: Post (use the picture button to add photos inside the post)
         type: rich-text

@@ -23,7 +23,7 @@ The blog runs on Jekyll, which GitHub Pages builds automatically.
 - Posts live in `_posts/`, one Markdown file per post, named `YEAR-MONTH-DAY-title.md`.
 - Copy `_drafts/POST-TEMPLATE.md` to start a new post. It explains every step.
 - The 3 newest posts appear in the "Writing" section on the homepage; all posts are listed at `/blog/`.
-- Images for posts go in `assets/` and are linked as `/myporfolio/assets/name.jpg`.
+- Images for posts go in `assets/` and are linked as `/assets/name.jpg`.
 - RSS feed: `/blog/feed.xml`.
 
 Preview locally (optional): `gem install jekyll -v 3.10.0 kramdown-parser-gfm jekyll-feed jekyll-sitemap jekyll-seo-tag webrick`, then `jekyll serve` and open http://localhost:4000/myporfolio/.
