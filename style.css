@@ -734,3 +734,19 @@ em { font-style: italic; }
   .nav .btn-dark { padding: .55em .9em; font-size: .8rem; }
   .logo { font-size: 1.8rem; }
 }
+
+/* Beyond-the-code card with a photo background (Lifelong learner) */
+.beyond-card.has-bg {
+  background: #1E1A12 var(--bg) center 30% / cover no-repeat;
+  border-color: transparent; color: #fff; isolation: isolate;
+}
+.beyond-card.has-bg::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: linear-gradient(180deg, rgba(20,16,10,.25) 0%, rgba(20,16,10,.55) 45%, rgba(20,16,10,.88) 100%);
+  transition: opacity .4s;
+}
+.beyond-card.has-bg::after { opacity: .18; z-index: -1; }
+.beyond-card.has-bg h3 { color: #fff; }
+.beyond-card.has-bg p { color: rgba(255,255,255,.88); }
+.beyond-card.has-bg:hover::before { opacity: .85; }
+.beyond-card.has-bg { background-size: cover; transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s, background-size .6s; }
