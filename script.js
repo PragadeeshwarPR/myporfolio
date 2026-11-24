@@ -169,3 +169,21 @@
     }
   });
 })();
+
+// ===== Copy email =====
+document.querySelectorAll(".copy-mail").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const email = btn.dataset.email;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      const t = document.createElement("textarea");
+      t.value = email; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); } catch {}
+      t.remove();
+    }
+    btn.textContent = "copied ✓";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = "copy"; btn.classList.remove("copied"); }, 2000);
+  });
+});
