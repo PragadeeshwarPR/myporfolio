@@ -818,3 +818,10 @@ em { font-style: italic; }
 .edu-card.has-bg p:last-child { color: rgba(255,255,255,.88); }
 @media (max-width: 760px) { .edu-card.has-bg { min-height: 320px; } }
 @media (max-width: 760px) { .edu-card.has-bg { min-height: 500px; --pos: 0%; } }
+/* phones: show the whole picture across the top, fading into the dark text area (school gate) */
+@media (max-width: 760px) {
+  .edu-card.has-bg.bg-fit { background-size: 100% auto; background-position: center top; min-height: 470px; }
+  .edu-card.has-bg.bg-fit::before {
+    background: linear-gradient(180deg, rgba(30,26,18,0) 0%, rgba(30,26,18,0) 16%, rgba(30,26,18,.7) 30%, #1E1A12 41%);
+  }
+}
