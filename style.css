@@ -790,3 +790,11 @@ em { font-style: italic; }
   .stats .stat.stat-me { padding: 1.2rem 1rem; }
   .me-tags li { white-space: nowrap; font-size: .72rem; padding: .28em .6em; gap: .28em; }
 }
+
+/* "in short" card: plain text lines (no pills, no icons) */
+.stats .stat-me .me-tags { gap: .15rem; }
+.stats .stat-me .me-tags li, .stats .stat-me .me-tags li:nth-child(n) {
+  background: none; border: 0; border-radius: 0; padding: 0; font-weight: 600; font-size: 1.05rem; color: var(--ink); white-space: normal;
+}
+.stats .stat-me .me-tags li:hover { transform: none; }
+@media (max-width: 760px) { .stats .stat-me .me-tags li, .stats .stat-me .me-tags li:nth-child(n) { font-size: .95rem; } }
