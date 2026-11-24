@@ -100,3 +100,72 @@
     tilt.addEventListener("pointerleave", () => (tilt.style.transform = ""));
   }
 })();
+
+// ===== Background music =====
+(() => {
+  const wrap = document.querySelector(".music");
+  const btn = document.querySelector(".music-btn");
+  const audio = document.getElementById("bgm");
+  const label = document.querySelector(".music-label");
+  if (!wrap || !btn || !audio) return;
+
+  const TARGET = 0.45;
+  let fadeTimer = null;
+  let pausedByTab = false;
+
+  const setState = (state) => {
+    wrap.dataset.state = state;
+    const playing = state === "playing";
+    btn.setAttribute("aria-pressed", playing);
+    btn.setAttribute("aria-label", playing ? "Pause background music" : "Play background music");
+    label.textContent = playing ? "now playing" : state === "loading" ? "loading…" : "play music";
+  };
+
+  const fadeTo = (to, done) => {
+    clearInterval(fadeTimer);
+    fadeTimer = setInterval(() => {
+      const step = to > audio.volume ? 0.03 : -0.05;
+      const next = audio.volume + step;
+      if ((step > 0 && next >= to) || (step < 0 && next <= to)) {
+        audio.volume = Math.max(0, Math.min(1, to));
+        clearInterval(fadeTimer);
+        done && done();
+      } else audio.volume = next;
+    }, 50);
+  };
+
+  const play = async () => {
+    setState("loading");
+    audio.volume = 0;
+    try {
+      await audio.play();
+      setState("playing");
+      fadeTo(TARGET);
+    } catch (e) {
+      setState("idle");
+    }
+  };
+
+  const pause = () => {
+    setState("paused");
+    fadeTo(0, () => audio.pause());
+  };
+
+  // hide the hint bubble after a few seconds or once the visitor scrolls
+  const hideHint = () => wrap.classList.add("hint-off");
+  setTimeout(hideHint, 7000);
+  window.addEventListener("scroll", () => { if (window.scrollY > 250) hideHint(); }, { passive: true });
+
+  btn.addEventListener("click", () => (audio.paused || wrap.dataset.state !== "playing" ? play() : pause()));
+
+  // pause when the tab is hidden, resume when it comes back
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && wrap.dataset.state === "playing") {
+      pausedByTab = true;
+      audio.pause();
+    } else if (!document.hidden && pausedByTab) {
+      pausedByTab = false;
+      audio.play().catch(() => setState("idle"));
+    }
+  });
+})();

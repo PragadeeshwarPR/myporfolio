@@ -461,6 +461,17 @@
     </div>
   </footer>
 
+  <!-- ================= MUSIC PLAYER ================= -->
+  <div class="music" data-state="idle">
+    <span class="music-hint">tap for some vibes 🎵</span>
+    <button class="music-btn" aria-label="Play background music" aria-pressed="false">
+      <span class="disc" aria-hidden="true"><span class="disc-hole"></span></span>
+      <span class="music-label">play music</span>
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </button>
+    <audio id="bgm" src="assets/bgm.mp3" preload="none" loop></audio>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
