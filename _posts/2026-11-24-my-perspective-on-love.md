@@ -1,6 +1,7 @@
 ---
 title: "My Perspective on Love ❤️"
 summary: "I'd rather wait for something real than settle for something temporary."
+image: /assets/love-cover.jpg
 tags: [love, life]
 published: true
 ---
