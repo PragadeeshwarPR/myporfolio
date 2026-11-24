@@ -759,3 +759,19 @@ em { font-style: italic; }
 .stats .stat:nth-child(3) { grid-column: 1 / -1; }
 .stats .stat:nth-child(2), .stats .stat.reveal.in:nth-child(2) { transform: none; }
 .stats .stat:nth-child(3) b { font-size: 3.4rem; }
+
+/* Who I am: "in short, I'm a ..." identity card */
+.stats .stat.stat-me { grid-column: 1 / -1; }
+.stats .stat.stat-me, .stats .stat.reveal.in.stat-me { transform: none; }
+.stat-me-label { position: relative; margin: 0 0 .8rem; font-family: var(--font-hand); font-size: 1.5rem; line-height: 1; color: var(--coral); }
+.me-tags { position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.me-tags li {
+  display: inline-flex; align-items: center; gap: .45em; padding: .55em 1.1em; border-radius: 999px;
+  font-weight: 700; font-size: .95rem; background: var(--cream); border: 1.5px solid rgba(233,164,0,.45);
+  transition: transform .25s, background .25s;
+}
+.me-tags li:nth-child(1) { background: #FFF0A6; }
+.me-tags li:nth-child(2) { background: #FFD9CC; border-color: rgba(255,122,89,.5); }
+.me-tags li:nth-child(3) { background: #E4DDFF; border-color: rgba(150,130,255,.5); }
+.me-tags li:hover { transform: translateY(-3px) rotate(-2deg); }
+.me-tags i { font-style: normal; }
