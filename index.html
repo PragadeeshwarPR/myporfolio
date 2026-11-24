@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pragadeeshwar · Portfolio</title>
+  <meta name="description" content="Portfolio of Pragadeeshwar — developer, builder, learner." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Caveat:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23FFC83D'/><text x='50' y='66' font-size='48' text-anchor='middle' font-family='Georgia' font-weight='700' fill='%231E1A12'>P</text></svg>" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a href="#top" class="logo">pragadeesh<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#journey">journey</a></li>
+        <li><a href="#education">education</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-dark btn-sm">say hi 👋</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+        <div class="sun-rays"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="chip reveal"><span class="dot"></span> PRAGADEESHWAR · DEVELOPER · TAMIL NADU, INDIA</p>
+          <h1 class="hero-title reveal">
+            Curious mind.<br />
+            Clean code.<br />
+            <em class="shine">Bright ideas.</em>
+          </h1>
+          <p class="hero-sub reveal">
+            Hi, I'm <strong>Pragadeeshwar</strong>. I build things for the web and
+            love turning ideas into products people actually enjoy using.
+          </p>
+          <p class="hero-sub reveal">
+            Right now I'm <span class="typed" data-words='["building web apps","learning new tech","solving problems","shipping projects"]'></span><span class="caret">|</span>
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn btn-yellow">see my work →</a>
+            <a href="#contact" class="btn btn-ghost">let's talk</a>
+            <a href="#" class="btn btn-ghost" download>⬇ resume</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <span class="sticker s-1">open to work ✦</span>
+          <span class="sticker s-2">10+ projects</span>
+          <span class="sticker s-3">coffee → code ☕</span>
+          <figure class="polaroid tilt">
+            <div class="photo">
+              <!-- Replace with <img src="assets/me.jpg" alt="Pragadeeshwar" /> -->
+              <span class="initials">P</span>
+            </div>
+            <figcaption>probably debugging something…</figcaption>
+          </figure>
+          <a href="#about" class="spin-badge" aria-label="Scroll to about">
+            <svg viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" /></defs>
+              <text><textPath href="#circ">scroll down · know me more · </textPath></text></svg>
+            <span>↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>always learning</span><i>✦</i><span>build · break · repeat</span><i>✦</i><span>pixel perfect</span><i>✦</i><span>still shipping</span><i>✦</i>
+        <span>always learning</span><i>✦</i><span>build · break · repeat</span><i>✦</i><span>pixel perfect</span><i>✦</i><span>still shipping</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow reveal">01 · WHO I AM</p>
+          <h2 class="title reveal">So, what do I <em>actually</em> do?</h2>
+          <p class="lead reveal">
+            I'm a developer who enjoys the whole journey — from a rough idea on paper
+            to a polished product on the screen. <!-- TODO: replace with your bio -->
+          </p>
+          <blockquote class="quote reveal">
+            Good software isn't just working code — it's something that feels
+            effortless to the person using it.
+          </blockquote>
+          <p class="lead reveal">
+            When I'm not coding, you'll find me exploring new tools, reading about tech,
+            or working on a side project that may or may not ever be finished. 🙂
+          </p>
+          <p class="hand reveal">— that's me in a nutshell ✎</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat reveal" style="--c: var(--yellow)"><b data-count="10">0</b><sup>+</sup><span>projects built</span></div>
+          <div class="stat reveal" style="--c: var(--peach)"><b data-count="8">0</b><sup>+</sup><span>technologies I use</span></div>
+          <div class="stat reveal" style="--c: var(--lavender)"><b data-count="500">0</b><sup>+</sup><span>hours of coding</span></div>
+          <div class="stat reveal" style="--c: var(--mint)"><b data-count="100">0</b><sup>%</sup><span>curiosity, always</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section section-tint">
+      <div class="container">
+        <p class="eyebrow reveal">02 · MY TOOLKIT</p>
+        <h2 class="title reveal">What I reach for <em>every day.</em></h2>
+        <p class="lead reveal narrow">No 50-logo wall. Just the things I genuinely use and keep getting better at.</p>
+
+        <div class="skill-grid">
+          <article class="skill-card reveal" style="--c: var(--yellow)">
+            <div class="skill-icon">⌘</div>
+            <h3>Frontend</h3>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Tailwind</li></ul>
+          </article>
+          <article class="skill-card reveal" style="--c: var(--peach)">
+            <div class="skill-icon">⚙</div>
+            <h3>Backend</h3>
+            <ul class="tags"><li>Node.js</li><li>Express</li><li>Python</li><li>REST APIs</li></ul>
+          </article>
+          <article class="skill-card reveal" style="--c: var(--lavender)">
+            <div class="skill-icon">◈</div>
+            <h3>Database</h3>
+            <ul class="tags"><li>MySQL</li><li>MongoDB</li><li>PostgreSQL</li></ul>
+          </article>
+          <article class="skill-card reveal" style="--c: var(--mint)">
+            <div class="skill-icon">✦</div>
+            <h3>Tools</h3>
+            <ul class="tags"><li>Git & GitHub</li><li>VS Code</li><li>Figma</li><li>Vercel</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">03 · THINGS I BUILT</p>
+        <h2 class="title reveal">Projects that are <em>live &amp; kicking.</em></h2>
+        <p class="lead reveal narrow">A few things I've designed, coded and shipped. Each one taught me something new.</p>
+
+        <div class="project-grid">
+          <!-- Project card: copy this block for each project -->
+          <article class="project reveal">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>project-one.app</span></div>
+              <div class="browser-body" style="--g1:#FFE27A; --g2:#FFB38A">
+                <span class="mock-title">Project One</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Project One</h3>
+              <p>A short description of what this project does and the problem it solves.</p>
+              <ul class="tags small"><li>React</li><li>Node.js</li><li>MongoDB</li></ul>
+              <div class="links"><a href="#">live ↗</a><a href="#">code ↗</a></div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>project-two.dev</span></div>
+              <div class="browser-body" style="--g1:#D9D0FF; --g2:#FFE9A8">
+                <span class="mock-title">Project Two</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Project Two</h3>
+              <p>A short description of what this project does and the problem it solves.</p>
+              <ul class="tags small"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="links"><a href="#">live ↗</a><a href="#">code ↗</a></div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>project-three.io</span></div>
+              <div class="browser-body" style="--g1:#BFF0E2; --g2:#FFF3B8">
+                <span class="mock-title">Project Three</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Project Three</h3>
+              <p>A short description of what this project does and the problem it solves.</p>
+              <ul class="tags small"><li>Python</li><li>Flask</li><li>MySQL</li></ul>
+              <div class="links"><a href="#">live ↗</a><a href="#">code ↗</a></div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>project-four.app</span></div>
+              <div class="browser-body" style="--g1:#FFC9B8; --g2:#E6DEFF">
+                <span class="mock-title">Project Four</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Project Four</h3>
+              <p>A short description of what this project does and the problem it solves.</p>
+              <ul class="tags small"><li>Next.js</li><li>Tailwind</li></ul>
+              <div class="links"><a href="#">live ↗</a><a href="#">code ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= JOURNEY / EXPERIENCE ================= -->
+    <section id="journey" class="section section-tint">
+      <div class="container">
+        <p class="eyebrow reveal">04 · THE JOURNEY</p>
+        <h2 class="title reveal">Every stop taught me <em>something.</em></h2>
+        <p class="lead reveal narrow">Not a perfectly planned path — just the one I actually walked.</p>
+
+        <ol class="timeline">
+          <li class="reveal">
+            <span class="t-num">01</span>
+            <div class="t-card">
+              <p class="t-meta">ROLE / POSITION · 2025 → NOW</p>
+              <h3>Company or Organisation</h3>
+              <p>What you did here, what you learned, and the impact you made.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="t-num">02</span>
+            <div class="t-card">
+              <p class="t-meta">INTERN · 2024</p>
+              <h3>Company or Organisation</h3>
+              <p>What you did here, what you learned, and the impact you made.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="t-num">03</span>
+            <div class="t-card">
+              <p class="t-meta">FREELANCE / CLUBS · 2023</p>
+              <h3>Your first big step</h3>
+              <p>Where it all started — hackathons, clubs, or your very first project.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section id="education" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">05 · WHERE I LEARNED</p>
+        <h2 class="title reveal">College taught me some. <em>The internet, the rest.</em></h2>
+        <div class="edu-grid">
+          <article class="edu-card reveal" style="--c: var(--yellow)">
+            <span class="edu-tag">COLLEGE</span>
+            <h3>Your College Name</h3>
+            <p class="edu-meta">B.E / B.Tech · Your Department · 20XX – 20XX</p>
+            <p>A line about what you studied and what you enjoyed most.</p>
+          </article>
+          <article class="edu-card reveal" style="--c: var(--lavender)">
+            <span class="edu-tag">SCHOOL</span>
+            <h3>Your School Name</h3>
+            <p class="edu-meta">Higher Secondary · 20XX</p>
+            <p>A line about your school days or subjects you picked.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= CONTACT ================= -->
+  <footer id="contact" class="contact">
+    <div class="contact-bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b3"></span></div>
+    <div class="container contact-inner">
+      <p class="hand big reveal">got something to build?</p>
+      <h2 class="contact-title reveal">Let's make something <em class="shine">bright</em> together.</h2>
+      <a href="mailto:you@example.com" class="btn btn-yellow btn-lg reveal">start a conversation →</a>
+      <ul class="socials reveal">
+        <li><a href="https://github.com/PragadeeshwarPR" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="mailto:you@example.com">Email</a></li>
+      </ul>
+      <p class="copy">© <span id="year"></span> Pragadeeshwar · made with ☀️ and lots of coffee</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
