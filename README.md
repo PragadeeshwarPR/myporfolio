@@ -27,3 +27,6 @@ The blog runs on Jekyll, which GitHub Pages builds automatically.
 - RSS feed: `/blog/feed.xml`.
 
 Preview locally (optional): `gem install jekyll -v 3.10.0 kramdown-parser-gfm jekyll-feed jekyll-sitemap jekyll-seo-tag webrick`, then `jekyll serve` and open http://localhost:4000/myporfolio/.
+
+## Admin panel (Pages CMS)
+`.pages.yml` configures [Pages CMS](https://app.pagescms.org). Sign in with GitHub, choose this repo, open **Blog posts**, and write, edit or delete posts in a visual editor. Photos you add go to `assets/`. Every save is a commit, so the site updates in about a minute.
