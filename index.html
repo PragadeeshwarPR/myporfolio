@@ -15,7 +15,7 @@ layout: null
   <meta property="og:description" content="Still learning. Still growing. Still becoming." />
   <meta property="og:image" content="https://pragadeeshwarpr.github.io/myporfolio/assets/me-formal.jpg" />
   <link rel="stylesheet" href="style.css?v=6" />
-  <link rel="stylesheet" href="blog.css?v=6" />
+  <link rel="stylesheet" href="blog.css?v=7" />
   {% feed_meta %}
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23FFC83D'/><text x='50' y='66' font-size='48' text-anchor='middle' font-family='Georgia' font-weight='700' fill='%231E1A12'>P</text></svg>" />
 </head>
@@ -33,9 +33,9 @@ layout: null
         <li><a href="#projects">projects</a></li>
         <li><a href="#skills">toolkit</a></li>
         <li><a href="#beyond">beyond code</a></li>
+        <li><a href="#writing">blog</a></li>
         <li><a href="#story">my story</a></li>
         <li><a href="#education">education</a></li>
-        <li><a href="#writing">blog</a></li>
       </ul>
       <a href="#contact" class="btn btn-dark btn-sm">say hi 👋</a>
       <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
@@ -346,10 +346,28 @@ layout: null
       </div>
     </section>
 
-    <!-- ================= MY STORY (long intro) ================= -->
-    <section id="story" class="section section-tint">
+    <!-- ================= WRITING / BLOG ================= -->
+    <section id="writing" class="section section-tint">
       <div class="container">
-        <p class="eyebrow reveal">06 · MY STORY</p>
+        <p class="eyebrow reveal">06 · WRITING</p>
+        <h2 class="title reveal">Thoughts, notes &amp; lessons, <em>written down.</em></h2>
+        <p class="lead reveal narrow">What I'm learning, building, watching and figuring out, one post at a time.</p>
+        {% if site.posts.size > 0 %}
+        <div class="post-list home-posts">
+          {% for post in site.posts limit: 3 %}
+            {% include post-card.html post=post %}
+          {% endfor %}
+        </div>
+        {% else %}
+        <p class="empty-note reveal">The first post is on its way. ✍️</p>
+        {% endif %}
+        <a class="btn btn-ghost reveal all-posts-btn" href="{{ '/blog/' | relative_url }}">read all posts →</a>
+      </div>
+    </section>
+    <!-- ================= MY STORY (long intro) ================= -->
+    <section id="story" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">07 · MY STORY</p>
         <h2 class="title reveal">More than just a <em>developer.</em></h2>
         <p class="lead reveal narrow">Five chapters. Some wins, one big setback, and a lot of starting over. Grab a coffee.</p>
 
@@ -472,9 +490,9 @@ layout: null
     </section>
 
     <!-- ================= EDUCATION ================= -->
-    <section id="education" class="section">
+    <section id="education" class="section section-tint">
       <div class="container">
-        <p class="eyebrow reveal">07 · WHERE I LEARNED</p>
+        <p class="eyebrow reveal">08 · WHERE I LEARNED</p>
         <h2 class="title reveal">Classrooms taught me some. <em>Curiosity, the rest.</em></h2>
         <div class="edu-grid">
           <article class="edu-card reveal" style="--c: var(--yellow)">
@@ -493,24 +511,6 @@ layout: null
       </div>
     </section>
 
-    <!-- ================= WRITING / BLOG ================= -->
-    <section id="writing" class="section section-tint">
-      <div class="container">
-        <p class="eyebrow reveal">08 · WRITING</p>
-        <h2 class="title reveal">Thoughts, notes &amp; lessons, <em>written down.</em></h2>
-        <p class="lead reveal narrow">What I'm learning, building, watching and figuring out, one post at a time.</p>
-        {% if site.posts.size > 0 %}
-        <div class="post-list home-posts">
-          {% for post in site.posts limit: 3 %}
-            {% include post-card.html post=post %}
-          {% endfor %}
-        </div>
-        {% else %}
-        <p class="empty-note reveal">The first post is on its way. ✍️</p>
-        {% endif %}
-        <a class="btn btn-ghost reveal all-posts-btn" href="{{ '/blog/' | relative_url }}">read all posts →</a>
-      </div>
-    </section>
   </main>
 
   <!-- ================= CONTACT ================= -->
